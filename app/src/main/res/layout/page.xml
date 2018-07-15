@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        android:focusable="true"
+        android:clickable="false"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:selectableItemBackground"
+        app:cardBackgroundColor="#ffffff">
+        <LinearLayout
+            android:layout_marginTop="10.0dip"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right|center"
+                android:layout_gravity="right|center">
+                <ImageView
+                    android:id="@+id/action_play"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_play1"/>
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/action_pause"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_pause1"/>
+
+                <CheckBox
+                    android:button="@drawable/toggle"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorPrimary"
+                    android:enabled="true"
+                    android:id="@+id/btn_belum_terjawab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ragu-ragu"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toLeftOf="@id/btnPrev" />
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/btnPrev"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_prev"
+                    android:layout_marginRight="40dp"
+                    android:text="Sebelumnya"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toLeftOf="@id/btnNext"/>
+
+                <ImageView
+                    android:visibility="gone"
+                    android:enabled="true"
+                    android:id="@+id/btnNext"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_next"
+                    android:text="Berikutnya"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/play_audio_in_background_service_progressbar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:max="100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-7dp"
+            android:visibility="invisible"/>
+    </android.support.v7.widget.CardView>
+    <!--View android:background="#55000000" android:layout_width="fill_parent" android:layout_height="3.0dip" /-->
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:background="#ffffffff"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_margin="15.0dip"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="2.26">
+
+                <berkarya.kopas.id.quiz.util.TextViewWithImages
+                    android:id="@+id/txtSoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:longClickable="false"
+                    android:text="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
+                    android:textSize="16.0dip" />
+                <TextView
+                    android:id="@+id/lblAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:longClickable="false"
+                    android:visibility="gone"
+                    android:text="Jawaban:"/>
+                <RadioGroup
+                    android:layout_gravity="top"
+                    android:orientation="vertical"
+                    android:id="@+id/rgAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <RadioButton android:id="@+id/rb_A" android:button="@drawable/toggle_a" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="A." />
+                    <RadioButton android:id="@+id/rb_B" android:button="@drawable/toggle_b" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="B." />
+                    <RadioButton android:id="@+id/rb_C" android:button="@drawable/toggle_c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="C." />
+                    <RadioButton android:id="@+id/rb_D" android:button="@drawable/toggle_d" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="D." />
+                    <RadioButton android:id="@+id/rb_E" android:button="@drawable/toggle_e" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="E." />
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
